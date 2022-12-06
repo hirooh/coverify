@@ -6,4 +6,4 @@
 
 Website desenvolvido para a disciplina de Desenvolvimento Baseado em Objeto.
 
-O Covereezer é uma simples página com foco na busca de capas de álbuns musicais presentes na plataforma Deezer. O script utiliza da API por "deezerdevs", disponibilizada no portal RapidAPI.
+O Covereezer é uma simples página com foco na busca de capas de álbuns musicais presentes na plataforma Deezer. O script utiliza da API por "[deezerdevs](https://rapidapi.com/deezerdevs/api/deezer-1)", disponibilizada no portal [RapidAPI](rapidapi.com).
