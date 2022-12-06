@@ -1,6 +1,9 @@
-document.querySelector('#enviar').addEventListener('click',consulta);
+document.querySelector('#enviar').addEventListener('click', consulta);
 
 async function consulta(){
+    if(document.querySelector("img") !== null){
+        document.querySelector("img").remove();
+    }
     const options = {
         method: 'GET',
         headers: {
@@ -9,20 +12,17 @@ async function consulta(){
         }
     };
 
-    let pesquisa = document.querySelector('#pesquisa').value;
-    let resposta = await fetch('https://spotify23.p.rapidapi.com/album_metadata/?id='+pesquisa+'', options)
+    let pesquisa = document.querySelector("#pesquisa").value;
+    let resposta = await fetch('https://spotify23.p.rapidapi.com/search/?q='+pesquisa +'&type=multi&offset=0&limit=10&numberOfTopResults=5', options)
     .then(response => response.json())
     .catch(err => console.error(err));
     console.log(resposta);
 
-    let resultados = document.querySelector('#resultados');
-    let texto = "<h1>Capa solicitada</h1>";
-    resultados.innerHTML = texto;
-
-    let imagemData = await fetch(resposta.data.album.coverArt.sources[0].url);
+    let imagemData = await fetch(resposta.albums.items[0].data.coverArt.sources[0].url);
     let imagem = await imagemData.blob();
     const imageObjectURL = URL.createObjectURL(imagem);
     let img = document.createElement('img');
+    img.setAttribute("class", "img");
     img.src = imageObjectURL;
     resultados.appendChild(img);
 }
