@@ -1,9 +1,6 @@
 document.querySelector('#enviar').addEventListener('click', consulta);
 
 async function consulta(){
-    if(document.querySelector("img") !== null){
-        document.querySelector("img").remove();
-    }
     const options = {
         method: 'GET',
         headers: {
@@ -18,11 +15,17 @@ async function consulta(){
     .catch(err => console.error(err));
     console.log(resposta);
 
-    let imagemData = await fetch(resposta.albums.items[0].data.coverArt.sources[0].url);
+    let imagemData = await fetch(resposta.albums.items[0].data.coverArt.sources[2].url);
     let imagem = await imagemData.blob();
     const imageObjectURL = URL.createObjectURL(imagem);
     let img = document.createElement('img');
     img.setAttribute("class", "img");
     img.src = imageObjectURL;
     resultados.appendChild(img);
+
+    let infoData = await fetch(resposta.albums.items[0].data.name);
+    let info = await infoData.text();
+    /*info = info + " | " + await fetch(resposta.albums.items[0].data.artists.items[0].profile.name);
+    info = info + " (" + await fetch(resposta.albums.items[0].data.date.year) + ")"*/;
+    document.querySelector(".infoTexto").innerHTML = info;
 }
