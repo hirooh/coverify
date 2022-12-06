@@ -10,37 +10,55 @@ header{
     display: flex;
     background-color: #004a00;
     height: 100%;
-    width: 100%;
-    justify-self: center;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 5%;
+    margin-bottom: 20px;
     padding: 2%;
+}
+
+body{
+    background-color: #dcdcdc;
+}
+
+.pesquisaTexto{
+    display: flex;
+    justify-content: center;
+    font-size: smaller;
+    font-style: italic;
+    margin-bottom: 5px;
 }
 
 .pesquisa{
     display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 35px;
+    margin-left: 35px;
     justify-content: center;
 }
 
 #pesquisa{
     padding: 5px;
-    width: 200px;
-    float: left;
+    width: 300px;
     border: 1px solid #000000;
     border-radius: 7px;
 }
 
 .lupa svg{
-    width: 20px;
-    cursor: pointer;
-}
-
-#pesquisa, svg{
+    width: 35px;
     height: 35px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 #resultados{
     display: flex;
     justify-content: center;
+    flex-flow: column-reverse;
+    text-align: center;
+}
+
+#resultados .img{
+    align-self: center;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 15px;
 }
