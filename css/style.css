@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu:wght@400;700&display=swap');
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    display: flex;
+    background-color: #004a00;
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    padding: 2%;
+}
+
+.pesquisa{
+    display: flex;
+    justify-content: center;
+}
+
+#pesquisa{
+    padding: 5px;
+    width: 200px;
+    float: left;
+    border: 1px solid #000000;
+    border-radius: 7px;
+}
+
+.lupa svg{
+    width: 20px;
+    cursor: pointer;
+}
+
+#pesquisa, svg{
+    height: 35px;
+}
+
+#resultados{
+    display: flex;
+    justify-content: center;
+}
