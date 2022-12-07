@@ -20,7 +20,7 @@ async function consulta(){
     let resposta = await fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q='+pesquisa, optionsDeezer)
     .then(response => response.json())
     .catch(err => console.error(err));
-    //console.log(resposta);
+    console.log(resposta);
 
     if(resposta.total == 0){
         const urlItunes = new URL('https://itunes.apple.com/search');
