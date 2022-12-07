@@ -1,0 +1,23 @@
+{
+  "background_color": "#00b6d5",
+  "description": "O Covereezer é uma simples página com foco na busca de capas de álbuns musicais presentes nas plataformas Deezer e Itunes",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Covereezer",
+  "orientation": "any",
+  "scope": "./",
+  "short_name": "Covereezer",
+  "start_url": "hirooh.github.io/covereezer/",
+  "theme_color": "#00b6d5",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "./img/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts": [],
+  "lang": "pt"
+}
