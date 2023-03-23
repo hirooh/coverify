@@ -1,8 +1,8 @@
 # covereezer
-[![hirooh - covereezer](https://img.shields.io/static/v1?label=hirooh&message=covereezer&color=blue&logo=github)](https://github.com/hirooh/covereezer "Go to GitHub repo")
-[![stars - covereezer](https://img.shields.io/github/stars/hirooh/covereezer?style=social)](https://github.com/hirooh/covereezer)
-[![forks - covereezer](https://img.shields.io/github/forks/hirooh/covereezer?style=social)](https://github.com/hirooh/covereezer)
-[![issues - covereezer](https://img.shields.io/github/issues/hirooh/covereezer)](https://github.com/hirooh/radiocatch/issues)
+[![juanmadeira - covereezer](https://img.shields.io/static/v1?label=juanmadeira&message=covereezer&color=blue&logo=github)](https://github.com/juanmadeira/covereezer "Go to GitHub repo")
+[![stars - covereezer](https://img.shields.io/github/stars/juanmadeira/covereezer?style=social)](https://github.com/juanmadeira/covereezer)
+[![forks - covereezer](https://img.shields.io/github/forks/juanmadeira/covereezer?style=social)](https://github.com/juanmadeira/covereezer)
+[![issues - covereezer](https://img.shields.io/github/issues/juanmadeira/covereezer)](https://github.com/juanmadeira/radiocatch/issues)
 
 Website desenvolvido para a disciplina de Desenvolvimento Baseado em Objeto.
 
