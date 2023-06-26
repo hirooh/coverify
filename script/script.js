@@ -1,11 +1,22 @@
-document.querySelector('#enviar').addEventListener('click', consulta);
-document.querySelector('#pesquisa').addEventListener("keypress", (event) => {
+/* querySelector const */
+const qs = (val) => {
+    return document.querySelector(val)
+}
+
+const qsAll = (val) => {
+    return document.querySelectorAll(val)
+}
+
+/* botão de pesquisa */
+qs("#enviar").addEventListener('click', consulta);
+qs("#pesquisa").addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
       consulta();
     }
 });
 
-async function consulta(){
+/* API */
+async function consulta() {
     // API config
     const optionsDeezer = {
         method: 'GET',
@@ -16,13 +27,13 @@ async function consulta(){
     };
 
     // coleta pesquisa do input
-    let pesquisa = document.querySelector("#pesquisa").value;
+    let pesquisa = qs("#pesquisa").value;
     let resposta = await fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q='+pesquisa, optionsDeezer)
     .then(response => response.json())
     .catch(err => console.error(err));
     console.log(resposta);
 
-    if(resposta.total == 0){
+    if(resposta.total == 0) {
         const urlItunes = new URL('https://itunes.apple.com/search');
         const paramsItunes = { term: pesquisa, media: 'music', country: 'br'}
         let cors = "https://cors-anywhere.herokuapp.com/";
@@ -47,10 +58,10 @@ async function consulta(){
         // coleta dados do lançamento da api Deezer
         let info = resposta.results[0].artistName;
         info = info + " - " + resposta.results[0].collectionName;
-        document.querySelector(".infoTexto").innerHTML = info;
+        qs(".infoTexto").innerHTML = info;
 
     }
-    else{
+    else {
         // coleta imagem da api Deezer
         let imagemData = await fetch(resposta.data[0].album.cover_xl);
         let imagem = await imagemData.blob();
@@ -64,12 +75,11 @@ async function consulta(){
         // coleta dados do lançamento da api Deezer
         let info = resposta.data[0].artist.name;
         info = info + " - " + resposta.data[0].album.title;
-        document.querySelector(".infoTexto").innerHTML = info;
+        qs(".infoTexto").innerHTML = info;
     }
     
     // impede a repetição da mesma imagem
-    while(document.querySelectorAll('.img').length !== 1){
-        document.querySelector(".img").remove();
+    while(qsAll(".img").length !== 1) {
+        qs(".img").remove();
     }
-
 }
