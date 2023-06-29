@@ -33,7 +33,7 @@ async function consulta() {
     .catch(err => console.error(err));
     console.log(resposta);
 
-    if(resposta.total == 0) {
+    if (resposta.total == 0) {
         const urlItunes = new URL('https://itunes.apple.com/search');
         const paramsItunes = { term: pesquisa, media: 'music', country: 'br'}
         let cors = "https://cors-anywhere.herokuapp.com/";
